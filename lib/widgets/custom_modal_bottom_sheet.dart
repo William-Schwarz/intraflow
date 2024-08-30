@@ -4,9 +4,9 @@ class CustomModalBottomSheet extends StatelessWidget {
   final Widget child;
 
   const CustomModalBottomSheet({
-    super.key,
+    Key? key,
     required this.child,
-  });
+  }) : super(key: key);
 
   Future<String?> show(BuildContext context) async {
     return await showModalBottomSheet<String?>(

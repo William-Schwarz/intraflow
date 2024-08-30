@@ -1,6 +1,6 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:intraflow/utils/theme/custom_colors.dart';
+import 'dart:ui';
 
 class CustomSnackBar {
   static void showDefault(BuildContext context, String message) {
@@ -26,7 +26,8 @@ class CustomSnackBar {
     );
   }
 
-  static void showWithUndo(BuildContext context, String message, VoidCallback onUndo) {
+  static void showWithUndo(
+      BuildContext context, String message, VoidCallback onUndo) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         backgroundColor: CustomColors.boxShadowColor,

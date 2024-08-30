@@ -3,7 +3,7 @@ import 'package:intraflow/services/auth/auth_service.dart';
 import 'package:intraflow/utils/helpers/app_config.dart';
 import 'package:intraflow/utils/helpers/field_validator.dart';
 import 'package:intraflow/utils/theme/custom_colors.dart';
-import 'package:intraflow/views/forget_password_view.dart';
+import 'package:intraflow/views/login/forget_password_view.dart';
 import 'package:intraflow/widgets/custom_snack_bar.dart';
 
 class AuthView extends StatefulWidget {
@@ -35,9 +35,9 @@ class _AuthViewState extends State<AuthView> {
         child: Center(
           child: SingleChildScrollView(
             child: Container(
-              width: MediaQuery.of(context).size.height * AppConfig().widhtMediaQueryWebPageLogin!,
+              width: MediaQuery.of(context).size.height *
+                  AppConfig().widhtMediaQueryWebPageLogin!,
               decoration: BoxDecoration(
-                color: Colors.white,
                 borderRadius: BorderRadius.circular(24),
               ),
               padding: const EdgeInsets.all(8),
@@ -57,10 +57,11 @@ class _AuthViewState extends State<AuthView> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        (_isEnter) ? "Bem vindo ao IntraFlow!" : "Vamos começar?",
+                        (_isEnter)
+                            ? "Bem vindo ao IntraFlow!"
+                            : "Vamos começar?",
                         textAlign: TextAlign.center,
                         style: const TextStyle(
-                          color: Colors.black,
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
@@ -70,11 +71,10 @@ class _AuthViewState extends State<AuthView> {
                       height: 8,
                     ),
                     Text(
-                      (_isEnter) ? "Faça login para acessar." : "Faça seu cadastro para começar a usar o IntraFlow.",
+                      (_isEnter)
+                          ? "Faça login para acessar."
+                          : "Faça seu cadastro para começar a usar o IntraFlow.",
                       textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        color: Colors.black,
-                      ),
                     ),
                     TextFormField(
                       controller: _emailController,
@@ -85,9 +85,6 @@ class _AuthViewState extends State<AuthView> {
                           color: CustomColors.secondaryColor,
                         ),
                         labelText: "E-mail",
-                        labelStyle: TextStyle(
-                          color: Colors.black,
-                        ),
                       ),
                       validator: (value) {
                         if (value == null || value == "") {
@@ -117,14 +114,13 @@ class _AuthViewState extends State<AuthView> {
                             });
                           },
                           icon: Icon(
-                            _passwordObscureText ? Icons.visibility_off : Icons.visibility,
+                            _passwordObscureText
+                                ? Icons.visibility_off
+                                : Icons.visibility,
                             color: CustomColors.secondaryColor,
                           ),
                         ),
                         labelText: "Senha",
-                        labelStyle: const TextStyle(
-                          color: Colors.black,
-                        ),
                       ),
                       validator: (value) {
                         if (value == null || value == "") {
@@ -178,11 +174,14 @@ class _AuthViewState extends State<AuthView> {
                               suffixIcon: IconButton(
                                 onPressed: () {
                                   setState(() {
-                                    _passwordConfirmObscureText = !_passwordConfirmObscureText;
+                                    _passwordConfirmObscureText =
+                                        !_passwordConfirmObscureText;
                                   });
                                 },
                                 icon: Icon(
-                                  _passwordConfirmObscureText ? Icons.visibility_off : Icons.visibility,
+                                  _passwordConfirmObscureText
+                                      ? Icons.visibility_off
+                                      : Icons.visibility,
                                   color: CustomColors.secondaryColor,
                                 ),
                               ),
@@ -215,9 +214,6 @@ class _AuthViewState extends State<AuthView> {
                                 color: CustomColors.secondaryColor,
                               ),
                               labelText: "Nome",
-                              labelStyle: TextStyle(
-                                color: Colors.black,
-                              ),
                             ),
                             validator: (value) {
                               if (value == null || value.isEmpty) {
