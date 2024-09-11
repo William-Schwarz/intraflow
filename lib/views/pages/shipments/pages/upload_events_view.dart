@@ -104,7 +104,7 @@ class _UploadEventsState extends State<UploadEvents> {
                         ),
                         if (_filesController.imageDataList.isNotEmpty)
                           CustomReorderableListView(
-                            imageDataList: _filesController.imageDataList,
+                            filesController: _filesController,
                             onRemoveItem: _updateImageDataList,
                           ),
                         const SizedBox(

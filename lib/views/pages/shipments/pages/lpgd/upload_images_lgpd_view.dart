@@ -65,7 +65,7 @@ class _UploadImagesLGPDViewState extends State<UploadImagesLGPDView> {
                 const SizedBox(height: 16),
                 if (widget.filesController.imageDataList.isNotEmpty)
                   CustomReorderableListView(
-                    imageDataList: widget.filesController.imageDataList,
+                    filesController: widget.filesController,
                     onRemoveItem: _updateImageDataList,
                   ),
                 const SizedBox(height: 16),

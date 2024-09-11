@@ -31,7 +31,7 @@ class _EmailVerificationViewState extends State<EmailVerificationView> {
             child: Container(
               alignment: Alignment.center,
               child: const Text(
-                'Verificaçãos de E-mail',
+                'Verificação de E-mail',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,

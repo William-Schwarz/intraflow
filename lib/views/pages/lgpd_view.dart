@@ -128,7 +128,7 @@ class _LgpdViewState extends State<LgpdView> {
                         buttonkey: _buttonKey,
                         onPressed: _toggleListView,
                         listIsOpen: _showListView,
-                        text: 'Visualizar Revistas Anteriores',
+                        text: 'Visualizar Privacidades e Seguranças Anteriores',
                       ),
                     ),
                     SizedBox(

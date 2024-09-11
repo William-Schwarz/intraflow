@@ -46,7 +46,15 @@ class FilesController extends ChangeNotifier {
   }
 
   List<Uint8List> imageDataList = [];
+
   Future<void> pickImages() async {
+    // Verifique se a quantidade total de imagens excede o limite
+    if (imageDataList.length >= 8) {
+      throw Exception('Você já selecionou o máximo de 8 imagens.');
+    }
+
+    int remainingSlots = 8 - imageDataList.length;
+
     if (kIsWeb) {
       FilePickerResult? result = await FilePicker.platform.pickFiles(
         type: FileType.custom,
@@ -55,8 +63,9 @@ class FilesController extends ChangeNotifier {
       );
 
       if (result != null) {
-        if (result.files.length > 8) {
-          throw Exception('Você pode selecionar no máximo 8 imagens.');
+        if (result.files.length > remainingSlots) {
+          throw Exception(
+              'Você pode selecionar no máximo $remainingSlots imagens.');
         }
 
         for (var file in result.files) {
@@ -76,17 +85,30 @@ class FilesController extends ChangeNotifier {
     } else {
       final picker = ImagePicker();
       final pickedFiles = await picker.pickMultiImage(
-        limit: 8,
+        // Note: O ImagePicker pode permitir mais de 8 imagens, mas o código a seguir restringe isso.
+        limit: remainingSlots,
       );
 
-      if (pickedFiles.length > 8) {
-        throw Exception('Você pode selecionar no máximo 8 imagens.');
+      if (pickedFiles.length > remainingSlots) {
+        throw Exception(
+            'Você pode selecionar no máximo $remainingSlots imagens.');
       }
 
       for (var pickedFile in pickedFiles) {
         File imageFile = File(pickedFile.path);
         Uint8List bytes = await imageFile.readAsBytes();
         imageDataList.add(bytes);
+      }
+    }
+
+    // Debug: Print the length of the list and first few elements
+    if (kDebugMode) {
+      print('Total images after picking: ${imageDataList.length}');
+    }
+    // Print first few bytes for debugging
+    if (imageDataList.isNotEmpty) {
+      if (kDebugMode) {
+        print('First image bytes length: ${imageDataList.first.length}');
       }
     }
 

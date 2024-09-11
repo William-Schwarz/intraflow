@@ -103,7 +103,7 @@ class _UploadCodeEthicsState extends State<UploadCodeEthics> {
                         ),
                         if (_filesController.imageDataList.isNotEmpty)
                           CustomReorderableListView(
-                            imageDataList: _filesController.imageDataList,
+                            filesController: _filesController,
                             onRemoveItem: _updateImageDataList,
                           ),
                         const SizedBox(

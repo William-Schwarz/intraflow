@@ -105,7 +105,7 @@ class _UploadAnnouncementsState extends State<UploadAnnouncements> {
                         ),
                         if (_filesController.imageDataList.isNotEmpty)
                           CustomReorderableListView(
-                            imageDataList: _filesController.imageDataList,
+                            filesController: _filesController,
                             onRemoveItem: _updateImageDataList,
                           ),
                         const SizedBox(

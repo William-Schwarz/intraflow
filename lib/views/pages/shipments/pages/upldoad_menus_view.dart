@@ -157,7 +157,7 @@ class _UploadMenusState extends State<UploadMenus> {
                         ),
                         if (_filesController.imageDataList.isNotEmpty)
                           CustomReorderableListView(
-                            imageDataList: _filesController.imageDataList,
+                            filesController: _filesController,
                             onRemoveItem: _updateImageDataList,
                           ),
                         const SizedBox(

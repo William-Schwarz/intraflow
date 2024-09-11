@@ -1,16 +1,17 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:intraflow/controllers/files_controller.dart';
 import 'package:intraflow/utils/theme/custom_colors.dart';
 import 'package:intraflow/widgets/custom_full_screen_image.dart';
 import 'package:intraflow/widgets/custom_full_screen_image_web.dart';
 
 class CustomReorderableListView extends StatefulWidget {
-  final List<Uint8List> imageDataList;
+  final FilesController filesController;
   final Function(List<Uint8List>) onRemoveItem;
 
   const CustomReorderableListView({
     super.key,
-    required this.imageDataList,
+    required this.filesController,
     required this.onRemoveItem,
   });
 
@@ -20,23 +21,21 @@ class CustomReorderableListView extends StatefulWidget {
 }
 
 class _CustomReorderableListViewState extends State<CustomReorderableListView> {
-  late List<Uint8List> imageDataList;
+  late FilesController _filesController;
   final double itemHeight = 75;
 
   @override
   void initState() {
     super.initState();
-    imageDataList = List.from(widget.imageDataList);
+    _filesController = widget.filesController;
   }
 
   @override
   Widget build(BuildContext context) {
-    double totalHeight = itemHeight * imageDataList.length;
+    double totalHeight = itemHeight * _filesController.imageDataList.length;
 
     return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 8,
-      ),
+      padding: const EdgeInsets.symmetric(horizontal: 8),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         color: CustomColors.tertiaryColor.withOpacity(0.5),
@@ -48,11 +47,12 @@ class _CustomReorderableListViewState extends State<CustomReorderableListView> {
         onReorder: (oldIndex, newIndex) {
           setState(() {
             final newIdx = newIndex > oldIndex ? newIndex - 1 : newIndex;
-            final item = imageDataList.removeAt(oldIndex);
-            imageDataList.insert(newIdx, item);
+            final item = _filesController.imageDataList.removeAt(oldIndex);
+            _filesController.imageDataList.insert(newIdx, item);
+            widget.onRemoveItem(_filesController.imageDataList);
           });
         },
-        children: imageDataList.asMap().entries.map((entry) {
+        children: _filesController.imageDataList.asMap().entries.map((entry) {
           final imageData = entry.value;
 
           return ListTile(
@@ -92,8 +92,8 @@ class _CustomReorderableListViewState extends State<CustomReorderableListView> {
                   icon: const Icon(Icons.delete),
                   onPressed: () {
                     setState(() {
-                      imageDataList.removeAt(entry.key);
-                      widget.onRemoveItem(imageDataList);
+                      _filesController.imageDataList.removeAt(entry.key);
+                      widget.onRemoveItem(_filesController.imageDataList);
                     });
                   },
                 ),
