@@ -35,8 +35,7 @@ class _AuthViewState extends State<AuthView> {
         child: Center(
           child: SingleChildScrollView(
             child: Container(
-              width: MediaQuery.of(context).size.height *
-                  AppConfig().widhtMediaQueryWebPageLogin!,
+              width: MediaQuery.of(context).size.height * AppConfig().widhtMediaQueryWebPageLogin!,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(24),
               ),
@@ -49,7 +48,7 @@ class _AuthViewState extends State<AuthView> {
                   children: [
                     SizedBox(
                       height: 200,
-                      child: Image.asset('assets/images/endomarketing.png'),
+                      child: Image.asset('assets/images/app/logo.png'),
                     ),
                     const SizedBox(
                       height: 8,
@@ -57,9 +56,7 @@ class _AuthViewState extends State<AuthView> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        (_isEnter)
-                            ? "Bem vindo ao IntraFlow!"
-                            : "Vamos começar?",
+                        (_isEnter) ? "Bem vindo ao IntraFlow!" : "Vamos começar?",
                         textAlign: TextAlign.center,
                         style: const TextStyle(
                           fontSize: 18,
@@ -114,9 +111,7 @@ class _AuthViewState extends State<AuthView> {
                             });
                           },
                           icon: Icon(
-                            _passwordObscureText
-                                ? Icons.visibility_off
-                                : Icons.visibility,
+                            _passwordObscureText ? Icons.visibility_off : Icons.visibility,
                             color: CustomColors.secondaryColor,
                           ),
                         ),
@@ -174,8 +169,7 @@ class _AuthViewState extends State<AuthView> {
                               suffixIcon: IconButton(
                                 onPressed: () {
                                   setState(() {
-                                    _passwordConfirmObscureText =
-                                        !_passwordConfirmObscureText;
+                                    _passwordConfirmObscureText = !_passwordConfirmObscureText;
                                   });
                                 },
                                 icon: Icon(

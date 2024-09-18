@@ -130,7 +130,7 @@ class CustomDrawerState extends State<CustomDrawer> {
           padding: const EdgeInsets.all(8.0),
           child: ImageIcon(
             AssetImage(asset),
-            color: CustomColors.secondaryColor,
+            color: Colors.white,
           ),
         ),
       ),

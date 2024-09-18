@@ -16,14 +16,14 @@ class FilesController extends ChangeNotifier {
       // Código original para a Web
       FilePickerResult? result = await FilePicker.platform.pickFiles(
         type: FileType.custom,
-        allowedExtensions: ['png', 'jpg', 'jpeg'],
+        allowedExtensions: ['png', 'jpg', 'jpeg', 'webp'],
       );
 
       if (result != null) {
         final fileName = result.files.single.name;
         final extension = fileName.split('.').last.toLowerCase();
 
-        if (!['png', 'jpg', 'jpeg'].contains(extension)) {
+        if (!['png', 'jpg', 'jpeg', 'webp'].contains(extension)) {
           throw Exception('Tipo de arquivo não suportado: $fileName');
         }
 
@@ -58,7 +58,7 @@ class FilesController extends ChangeNotifier {
     if (kIsWeb) {
       FilePickerResult? result = await FilePicker.platform.pickFiles(
         type: FileType.custom,
-        allowedExtensions: ['png', 'jpg', 'jpeg'],
+        allowedExtensions: ['png', 'jpg', 'jpeg', 'webp'],
         allowMultiple: true,
       );
 
@@ -72,7 +72,7 @@ class FilesController extends ChangeNotifier {
           final fileName = file.name;
           final extension = fileName.split('.').last.toLowerCase();
 
-          if (!['png', 'jpg', 'jpeg'].contains(extension)) {
+          if (!['png', 'jpg', 'jpeg', 'webp'].contains(extension)) {
             throw Exception('Tipo de arquivo não suportado: $fileName');
           }
 

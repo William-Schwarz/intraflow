@@ -95,7 +95,8 @@ class _UploadCodeEthicsState extends State<UploadCodeEthics> {
                             });
                           },
                           labelText: 'Descrição do Código de Ética',
-                          hintText: 'Ex: Como Ativar Ligações Wi-fi',
+                          hintText:
+                              'Aqui você deve descrever brevemente o código de ética.',
                           maxLength: 50,
                         ),
                         const SizedBox(

@@ -7,8 +7,8 @@ class CustomLoadingSplashscreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Center(
       child: SizedBox(
-        height: 300,
-        width: 300,
+        height: 350,
+        width: 350,
         child: CircularProgressIndicator(),
       ),
     );

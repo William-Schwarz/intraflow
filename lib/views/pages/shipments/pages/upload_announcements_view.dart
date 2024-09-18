@@ -97,7 +97,8 @@ class _UploadAnnouncementsState extends State<UploadAnnouncements> {
                             });
                           },
                           labelText: 'Descrição do Comunicado',
-                          hintText: 'Ex: Férias Coletivas',
+                          hintText:
+                              'Aqui você deve descrever brevemente o comunicado.',
                           maxLength: 50,
                         ),
                         const SizedBox(
@@ -163,7 +164,7 @@ class _UploadAnnouncementsState extends State<UploadAnnouncements> {
                           buttonkey: _buttonKey,
                           onPressed: _toggleListView,
                           listIsOpen: _showListView,
-                          text: 'Visualizar Eventos Lançados essa Semana',
+                          text: 'Visualizar Comunicados Lançados essa Semana',
                         ),
                         const SizedBox(
                           height: 12,

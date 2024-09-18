@@ -40,6 +40,8 @@ dependencies:
   url_launcher: ^6.3.0
   flutter_pdfview: ^1.3.2
   google_fonts: ^6.2.1
+  flutter_native_splash: ^2.4.1
+  flutter_launcher_icons: ^0.13.1
 
 
 dev_dependencies:
@@ -47,10 +49,25 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^3.0.0
 
+flutter_native_splash:
+  color: '#C1BCBC'
+  image: 'assets/images/app/logo.png'
+  android: true
+  ios: true
+
+flutter_launcher_icons:
+  image_path: 'assets/images/app/logo.png'
+  ios: true
+  remove_alpha_ios: true
+  android: 'launcher_icon'
+  adaptive_icon_background: '#C1BCBC'
+  adaptive_icon_foreground: 'assets/images/app/logo.png'
+
 flutter:
   uses-material-design: true
   assets:
     - assets/images/
+    - assets/images/app/
     - assets/images/icons/
     - assets/images/svgs/
     - assets/firebase/firebase-adminsdk.json

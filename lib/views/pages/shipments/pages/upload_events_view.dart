@@ -96,7 +96,8 @@ class _UploadEventsState extends State<UploadEvents> {
                             });
                           },
                           labelText: 'Descrição do Evento',
-                          hintText: 'Ex: Corrida SESI',
+                          hintText:
+                              'Aqui você deve descrever brevemente o evento.',
                           maxLength: 50,
                         ),
                         const SizedBox(

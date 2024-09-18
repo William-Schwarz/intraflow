@@ -88,7 +88,8 @@ class _UploadMagazinesViewState extends State<UploadMagazinesView> {
                             });
                           },
                           labelText: 'Descrição da Revista',
-                          hintText: 'Ex: K Entre Nós',
+                          hintText:
+                              'Aqui você deve descrever brevemente a revista',
                           maxLength: 50,
                         ),
                         const SizedBox(

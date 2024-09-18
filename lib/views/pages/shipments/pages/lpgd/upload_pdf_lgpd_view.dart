@@ -66,7 +66,7 @@ class _UploadPDFLGPDViewState extends State<UploadPDFLGPDView> {
                 CustomTextField(
                   controller: widget.descricaoController,
                   labelText: 'Descrição da Privacidade e Segurança',
-                  hintText: 'Ex: K Entre Nós',
+                  hintText: 'Aqui você deve descrever brevemente a lgpd.',
                   maxLength: 50,
                 ),
                 const SizedBox(height: 16),

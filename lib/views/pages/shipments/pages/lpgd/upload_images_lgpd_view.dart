@@ -59,7 +59,7 @@ class _UploadImagesLGPDViewState extends State<UploadImagesLGPDView> {
                 CustomTextField(
                   controller: widget.descricaoController,
                   labelText: 'Descrição da Privacidade e Segurança',
-                  hintText: 'Ex: Como Ativar Ligações Wi-fi',
+                  hintText: 'Aqui você deve descrever brevemente a lgpd.',
                   maxLength: 50,
                 ),
                 const SizedBox(height: 16),

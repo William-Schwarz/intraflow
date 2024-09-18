@@ -31,10 +31,10 @@ Future<Map<String, dynamic>> userInfos() async {
 
   if (roles?['visualizador']?['eventos'] == true) {
     screens.add(const EventsView());
-    titles.add('Calendário Eventos');
+    titles.add('Eventos');
     drawerItemsVisualizador.add({
       'asset': 'assets/images/icons/event.png',
-      'title': 'Calendário Eventos',
+      'title': 'Eventos',
     });
     bottomNavItems.add({
       'asset': 'assets/images/icons/event.png',
@@ -43,10 +43,10 @@ Future<Map<String, dynamic>> userInfos() async {
   }
   if (roles?['visualizador']?['cardapios'] == true) {
     screens.add(const MenuView());
-    titles.add('Cardápio Refeitório');
+    titles.add('Cardápios');
     drawerItemsVisualizador.add({
       'asset': 'assets/images/icons/restaurant.png',
-      'title': 'Cardápio Refeitório',
+      'title': 'Cardápios',
     });
     bottomNavItems.add({
       'asset': 'assets/images/icons/restaurant.png',
@@ -55,10 +55,10 @@ Future<Map<String, dynamic>> userInfos() async {
   }
   if (roles?['visualizador']?['comunicados'] == true) {
     screens.add(const AnnouncementsView());
-    titles.add('Comunicados RH');
+    titles.add('Comunicados');
     drawerItemsVisualizador.add({
       'asset': 'assets/images/icons/record_voice_over.png',
-      'title': 'Comunicados RH',
+      'title': 'Comunicados',
     });
     bottomNavItems.add({
       'asset': 'assets/images/icons/record_voice_over.png',
@@ -67,10 +67,10 @@ Future<Map<String, dynamic>> userInfos() async {
   }
   if (roles?['visualizador']?['revistas'] == true) {
     screens.add(const MagazinesView());
-    titles.add('Revista K Entre Nós');
+    titles.add('Revistas');
     drawerItemsVisualizador.add({
       'asset': 'assets/images/icons/magazine.png',
-      'title': 'Revista K Entre Nós',
+      'title': 'Revistas',
     });
     bottomNavItems.add({
       'asset': 'assets/images/icons/magazine.png',
@@ -86,7 +86,7 @@ Future<Map<String, dynamic>> userInfos() async {
     });
     bottomNavItems.add({
       'asset': 'assets/images/icons/lock.png',
-      'label': 'LGPD',
+      'label': 'Privacidade e Segurança',
     });
   }
   if (roles?['visualizador']?['codigoEtica'] == true) {
@@ -105,28 +105,28 @@ Future<Map<String, dynamic>> userInfos() async {
     uploadItems.add({
       'route': '/enviar/evento',
       'asset': 'assets/images/icons/event.png',
-      'text': 'Calendário Evento',
+      'text': 'Evento',
     });
   }
   if (roles?['editor']?['cardapios'] == true) {
     uploadItems.add({
       'route': '/enviar/cardapio',
       'asset': 'assets/images/icons/restaurant.png',
-      'text': 'Cardápio Refeitório',
+      'text': 'Cardápio',
     });
   }
   if (roles?['editor']?['comunicados'] == true) {
     uploadItems.add({
       'route': '/enviar/comunicado',
       'asset': 'assets/images/icons/record_voice_over.png',
-      'text': 'Comunicado RH',
+      'text': 'Comunicado',
     });
   }
   if (roles?['editor']?['revistas'] == true) {
     uploadItems.add({
       'route': '/enviar/revista',
       'asset': 'assets/images/icons/magazine.png',
-      'text': 'Revista K Entre Nós',
+      'text': 'Revista',
     });
   }
   if (roles?['editor']?['lgpd'] == true) {

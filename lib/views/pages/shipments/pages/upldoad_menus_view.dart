@@ -102,7 +102,8 @@ class _UploadMenusState extends State<UploadMenus> {
                             });
                           },
                           labelText: 'Descrição do Cardápio',
-                          hintText: 'Ex: Cardápio Especial',
+                          hintText:
+                              'Aqui você deve descrever brevemente o cardápio.',
                           maxLength: 50,
                         ),
                         const SizedBox(
