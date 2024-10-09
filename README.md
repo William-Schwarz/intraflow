@@ -36,7 +36,7 @@ O **IntraFlow** faz uso de diversos serviços do Firebase para fornecer uma expe
 
 ## Observação ⚙️
 
-Para configurar o projeto localmente, é necessário cria um projeto no firebase e adicionar os arquivos necessários para cada serviço usado. 
+Para configurar o projeto localmente, é necessário criar um projeto no firebase e adicionar os arquivos necessários para cada serviço usado. 
 Documentação oficial:
 
 [Firestore 📊](https://firebase.flutter.dev/docs/firestore/usage)
