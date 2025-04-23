@@ -1,6 +1,6 @@
 # IntraFlow
 
-## Descrição 📱
+## Sobre 📱
 
 O **IntraFlow** é um aplicativo Flutter projetado para melhorar a comunicação interna empresarial. Com uma interface intuitiva e recursos robustos, ele oferece vários tópicos importantes:
 
